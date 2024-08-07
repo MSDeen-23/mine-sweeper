@@ -1,8 +1,8 @@
-package org.gic;
+package org.gic.minesweeper;
 
 import java.util.Random;
 
-import static org.gic.MineSweeperUtils.INCORRECT_INPUT_ERROR_MESSAGE;
+import static org.gic.minesweeper.MineSweeperUtils.INCORRECT_INPUT_ERROR_MESSAGE;
 
 public class MineSweeper {
     private int[][] mineField;

@@ -1,4 +1,4 @@
-package org.gic;
+package org.gic.minesweeper;
 
 public enum GamingStatus {
     WON("Congratulations, you have won the game!"),

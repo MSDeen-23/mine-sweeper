@@ -1,5 +1,8 @@
 package org.gic;
 
+import org.gic.minesweeper.MineSweeper;
+import org.gic.minesweeper.MineSweeperUtils;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
