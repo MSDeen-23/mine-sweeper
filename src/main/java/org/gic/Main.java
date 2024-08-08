@@ -10,7 +10,6 @@ import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        MineSweeperUtils.validateGivenGameSquare("A1");
         BufferedReader bufferedReader =  new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Welcome to Minesweeper!");
         String continueInput;
@@ -20,7 +19,7 @@ public class Main {
             while (true){
                 try {
                     System.out.print("Enter the size of the grid (e.g. 4 for a 4x4 grid): ");
-                    gridSize = MineSweeperUtils.validateGridSize(bufferedReader.readLine());
+                    gridSize = MineSweeperUtils.Validator.gridSize(bufferedReader.readLine());
                     break;
                 }
                 catch (IllegalArgumentException e){
@@ -31,7 +30,7 @@ public class Main {
             while (true) {
                 try {
                     System.out.print("Enter the number of mines to place on the grid (maximum is 35% of the total squares): ");
-                    numberOfMines = MineSweeperUtils.validateNumberOfMines(bufferedReader.readLine(),gridSize);
+                    numberOfMines = MineSweeperUtils.Validator.numberOfMines(bufferedReader.readLine(),gridSize);
                     break;
                 }
                 catch (IllegalArgumentException e){
@@ -43,7 +42,7 @@ public class Main {
 
             while(!mineSweeper.isGameOver()){
                 System.out.println("Here is your mineField");
-                mineSweeper.printMineField();
+                mineSweeper.displayMinefield();
                 System.out.print("Select a square to reveal (e.g. A1): ");
                 String currentGameSquare = bufferedReader.readLine().toUpperCase();
                 try {
@@ -55,7 +54,7 @@ public class Main {
             }
             System.out.println(mineSweeper.getStatus().toString());
             System.out.println("The minefield was:");
-            mineSweeper.printMineField();
+            mineSweeper.displayMinefield();
             System.out.print("Press any key to continue or press X to exit: ");
             continueInput = bufferedReader.readLine().toUpperCase();
 
