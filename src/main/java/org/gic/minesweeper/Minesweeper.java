@@ -1,6 +1,6 @@
 package org.gic.minesweeper;
 
-public interface MineSweeper {
+public interface Minesweeper {
     GamingStatus getStatus();
     void printMineField();
 

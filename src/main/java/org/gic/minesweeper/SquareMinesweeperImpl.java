@@ -4,7 +4,7 @@ import java.util.Random;
 
 import static org.gic.minesweeper.MineSweeperUtils.INCORRECT_INPUT_ERROR_MESSAGE;
 
-public class MineSweeperImpl implements MineSweeper {
+public class SquareMinesweeperImpl implements Minesweeper {
     private int[][] mineField;
 
     private final int MINE_SQUARE = -1;
@@ -17,7 +17,7 @@ public class MineSweeperImpl implements MineSweeper {
     private GamingStatus status;
 
 
-    public MineSweeperImpl(int sizeOfGrid, int numberOfMines) {
+    public SquareMinesweeperImpl(int sizeOfGrid, int numberOfMines) {
         int validGridSize = MineSweeperUtils.validateGridSize(sizeOfGrid);
         int validNoOfMines = MineSweeperUtils.validateNumberOfMines(validGridSize,numberOfMines);
         mineField = new int[sizeOfGrid][sizeOfGrid];
@@ -28,31 +28,37 @@ public class MineSweeperImpl implements MineSweeper {
 
 
     public void printMineField(){
-        System.out.print(" ");
+        System.out.print("  ");
         for(int i=0;i<mineField[0].length;i++){
             System.out.print(i+1+" ");
         }
         System.out.println();
         for(int i=0;i<mineField.length;i++){
-            System.out.print((char)(i+65));
+            System.out.print((char)(i+65)+" ");
             for(int j=0;j< mineField[i].length;j++){
-                if(status==GamingStatus.PLAYING) {
-                    if (mineField[i][j] == UNREVEALED_SQUARE || mineField[i][j] == MINE_SQUARE) {
-                        System.out.print("- ");
-                    } else {
-                        System.out.print(mineField[i][j] + " ");
-                    }
-                }
-                else{
-                    if (mineField[i][j] == MINE_SQUARE) {
-                        System.out.print("1 ");
-                    } else {
-                        System.out.print("0 ");
-                    }
-                }
+                System.out.print(getCell(i, j));
             }
             System.out.println();
         }
+    }
+
+    private String getCell(int i, int j) {
+        String value;
+        if(status==GamingStatus.PLAYING) {
+            if (mineField[i][j] == UNREVEALED_SQUARE || mineField[i][j] == MINE_SQUARE) {
+                value = "-";
+            } else {
+                value = String.valueOf(mineField[i][j]);
+            }
+        }
+        else{
+            if (mineField[i][j] == MINE_SQUARE) {
+                value = "X";
+            } else {
+                value = "0";
+            }
+        }
+        return value +" ";
     }
 
 
