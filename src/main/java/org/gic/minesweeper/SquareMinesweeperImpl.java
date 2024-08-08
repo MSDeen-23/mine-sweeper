@@ -125,7 +125,7 @@ public class SquareMinesweeperImpl implements Minesweeper {
         // it has been unrevealed
         if(status==GamingStatus.PLAYING) {
             if (mineField[i][j] == UNREVEALED_SQUARE || mineField[i][j] == MINE_SQUARE) {
-                value = "-";
+                value = "_";
             } else {
                 value = String.valueOf(mineField[i][j]);
             }
