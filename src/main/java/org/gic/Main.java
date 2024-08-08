@@ -44,7 +44,7 @@ public class Main {
                 System.out.println("Here is your mineField");
                 mineSweeper.displayMinefield();
                 System.out.print("Select a square to reveal (e.g. A1): ");
-                String currentGameSquare = bufferedReader.readLine().toUpperCase();
+                String currentGameSquare = bufferedReader.readLine();
                 try {
                     mineSweeper.revealSquare(currentGameSquare);
                 }
