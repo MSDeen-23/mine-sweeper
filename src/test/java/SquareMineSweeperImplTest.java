@@ -11,15 +11,16 @@ public class SquareMineSweeperImplTest {
     private SquareMinesweeperImpl squareMinesweeper;
 
     @BeforeEach
-    public void setUp() throws NoSuchFieldException, IllegalAccessException {
+    public void setUp() {
         squareMinesweeper = new SquareMinesweeperImpl(4,3);
     }
 
     @Test
-    public void testObjectCreated_success() throws NoSuchFieldException, IllegalAccessException {
+    public void testObjectCreated_success() {
         assertNotNull(squareMinesweeper);
         assertEquals(GamingStatus.PLAYING,squareMinesweeper.getStatus());
-        assertEquals(false,squareMinesweeper.isGameOver());
+        assertFalse(squareMinesweeper.isGameOver());
+        
     }
 
     @Test
@@ -48,7 +49,7 @@ public class SquareMineSweeperImplTest {
                     }
                 }
             }
-            assertEquals(true,squareMinesweeper.isGameOver());
+            assertTrue(squareMinesweeper.isGameOver());
             assertEquals(GamingStatus.WON,squareMinesweeper.getStatus());
     }
 
@@ -64,7 +65,7 @@ public class SquareMineSweeperImplTest {
                 }
             }
         }
-        assertEquals(true,squareMinesweeper.isGameOver());
+        assertTrue(squareMinesweeper.isGameOver());
         assertEquals(GamingStatus.LOST,squareMinesweeper.getStatus());
     }
 
@@ -84,14 +85,14 @@ public class SquareMineSweeperImplTest {
 
         // reveal a non mine square and get the adjacent value
         squareMinesweeper.revealSquare("A1");
-        assertEquals(false,squareMinesweeper.isGameOver());
+        assertFalse(squareMinesweeper.isGameOver());
         assertEquals(GamingStatus.PLAYING,squareMinesweeper.getStatus());
         mineField = getMineField();
         assertEquals(1,mineField[0][0]);
 
         // reveal a non mine square and get the adjacent value
         squareMinesweeper.revealSquare("B3");
-        assertEquals(false,squareMinesweeper.isGameOver());
+        assertFalse(squareMinesweeper.isGameOver());
         assertEquals(GamingStatus.PLAYING,squareMinesweeper.getStatus());
         mineField = getMineField();
         assertEquals(3,mineField[1][2]);
@@ -99,7 +100,7 @@ public class SquareMineSweeperImplTest {
 
         //reveal a mine square and check the game status
         squareMinesweeper.revealSquare("B2");
-        assertEquals(true,squareMinesweeper.isGameOver());
+        assertTrue(squareMinesweeper.isGameOver());
         assertEquals(GamingStatus.LOST,squareMinesweeper.getStatus());
     }
 
