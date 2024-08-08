@@ -30,7 +30,7 @@ public class Main {
             while (true) {
                 try {
                     System.out.print("Enter the number of mines to place on the grid (maximum is 35% of the total squares): ");
-                    numberOfMines = MineSweeperUtils.Validator.numberOfMines(bufferedReader.readLine(),gridSize);
+                    numberOfMines = MineSweeperUtils.Validator.numberOfMines(gridSize,bufferedReader.readLine());
                     break;
                 }
                 catch (IllegalArgumentException e){

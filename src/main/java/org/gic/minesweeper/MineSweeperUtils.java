@@ -35,7 +35,7 @@ public class MineSweeperUtils {
             if (gridSize < 2) {
                 throw new IllegalArgumentException("Minimum size of the grid is 2.");
             }
-            if (gridSize >= 10) {
+            if (gridSize > 10) {
                 throw new IllegalArgumentException("Maximum size of grid is 10.");
             }
             return gridSize;
@@ -48,7 +48,7 @@ public class MineSweeperUtils {
          * @return valid
          * @throws IllegalArgumentException
          */
-        public static int numberOfMines(String numberOfMinesInput, int gridSize) throws IllegalArgumentException {
+        public static int numberOfMines(int gridSize,String numberOfMinesInput) throws IllegalArgumentException {
             int numberOfMines;
             try {
                 numberOfMines = Integer.parseInt(numberOfMinesInput);
