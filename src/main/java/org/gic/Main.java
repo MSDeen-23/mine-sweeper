@@ -1,6 +1,7 @@
 package org.gic;
 
 import org.gic.minesweeper.MineSweeper;
+import org.gic.minesweeper.MineSweeperImpl;
 import org.gic.minesweeper.MineSweeperUtils;
 
 import java.io.BufferedReader;
@@ -38,7 +39,7 @@ public class Main {
                 }
             }
 
-            MineSweeper mineSweeper = new MineSweeper(gridSize,numberOfMines);
+            MineSweeper mineSweeper = new MineSweeperImpl(gridSize,numberOfMines);
 
             while(!mineSweeper.isGameOver()){
                 System.out.println("Here is your mineField");
