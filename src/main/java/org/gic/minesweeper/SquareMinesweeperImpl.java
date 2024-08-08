@@ -1,8 +1,10 @@
 package org.gic.minesweeper;
 
+import org.gic.minesweeper.utils.MineSweeperUtils;
+
 import java.util.Random;
 
-import static org.gic.minesweeper.MineSweeperUtils.INCORRECT_INPUT_ERROR_MESSAGE;
+import static org.gic.minesweeper.utils.MineSweeperUtils.INCORRECT_INPUT_ERROR_MESSAGE;
 
 public class SquareMinesweeperImpl implements Minesweeper {
 

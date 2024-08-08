@@ -1,4 +1,4 @@
-import org.gic.minesweeper.MineSweeperUtils;
+import org.gic.minesweeper.utils.MineSweeperUtils;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

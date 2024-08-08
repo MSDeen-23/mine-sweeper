@@ -1,4 +1,4 @@
-package org.gic.minesweeper;
+package org.gic.minesweeper.utils;
 
 public class MineSweeperUtils {
 

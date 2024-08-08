@@ -2,7 +2,7 @@ package org.gic;
 
 import org.gic.minesweeper.Minesweeper;
 import org.gic.minesweeper.SquareMinesweeperImpl;
-import org.gic.minesweeper.MineSweeperUtils;
+import org.gic.minesweeper.utils.MineSweeperUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
