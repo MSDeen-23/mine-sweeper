@@ -135,14 +135,44 @@ Incorrect input.
 Select a square to reveal (e.g. A1):
 ```
 # Result
+# How to Run This Project
 
-# How to run this project
--Import the source code and run the Main.java file
+- **Git Clone:**
+  - Clone the repository from [https://github.com/MSDeen-23/mine-sweeper](https://github.com/MSDeen-23/mine-sweeper)
 
--Java version: Java 17
+- **Or Download as ZIP:**
+  - Download the source code from the GitHub repository as a ZIP file.
+  - Unzip the downloaded file to a directory of your choice.
 
--Dependencies: JUnit (v5.8.1)
-
+- **Navigate to the Project Directory:**
+  ```bash
+  cd mine-sweeper
+  ```
+- **Running as a Java Project**:
+  - Requirements: JDK and JRE (Preferred version 17)
+    - Compile the java files
+      ```bash 
+      javac -d out src/main/java/org/gic/minesweeper/*.java src/main/java/org/gic/Main.java
+      ```
+    - Run the application
+      ```bash 
+      java -cp out org.gic.Main
+      ```
+- **Running as a maven project**
+  - Requirements: maven
+    - Build the project
+      ```bash 
+      mvn clean install
+      ```
+    - Run tests (optional, skip if not needed)
+      ```bash 
+      mvn test (To run the tests skip if not needed)
+      ```
+    - Run the application
+      ```bash 
+      mvn exec:java -Dexec.mainClass="org.gic.Main"
+      ```
+      
 # Sample output: WON
 ```
 Welcome to Minesweeper!
