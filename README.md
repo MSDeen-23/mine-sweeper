@@ -1,18 +1,3 @@
-# Instructions
-- Please use C#, Java, Kotlin to solve the problem  stated below.
-
-## Here are a few tips:
-- Include unit/end-to-end tests in your solution. We recommend using TDD to solve these problems, where possible.
-- Keep your functions/classes small.
-- Demonstrate a good understanding of clean code, object oriented skills, and SOLID principles.
-- Submit production-ready code that is clean and easy to understand with appropriate documentation.
-
-## Rules:
-- You may NOT use any external libraries that directly solve this problem, but you may use external libraries or tools for building or testing purposes. Specifically, you may use unit-testing libraries or build tools available for your chosen language (e.g., JUnit, NUnit, etc.).
-- You should NOT include any executable attachments, including those with .exe or .lib extensions. System security is very important to us and certain file extensions will be blocked for security purposes, resulting in delays to your application. We need to be able to run and build your code ourselves, so please submit your code as a zipped file of source code and supporting files, without any compiled code. If you're submitting in C#, please do not submit your code as a .msi file.
-- Please include a brief explanation of your design and assumptions, along with your code, as well as detailed instructions to run your application. Also include the environment required to run the application, eg. Windows, Linux.
-- We assess a number of things including your application code design, your tests and general readability. While these are relatively small problems, we expect you to submit what you believe is production-quality code; code that you'd be able to run, maintain, and evolve. You don't need to gold plate your solution, however we are looking for something more than a bare-bones algorithm.
-
 # Problem statement: MineSweeper App
 Write a program that simulates a Minesweeper game on a square grid.
 
@@ -112,7 +97,7 @@ Oh no, you detonated a mine! Game over.
 Press any key to play again...
 ```
 
-Incorect input example
+Incorrect input example
 Failure example
 ```
 Welcome to Minesweeper!
@@ -148,4 +133,155 @@ C _ _ _
 Select a square to reveal (e.g. A1): A
 Incorrect input.
 Select a square to reveal (e.g. A1):
+```
+# Result
+
+# How to run this project
+-Import the source code and run the Main.java file
+
+-Java version: Java 17
+
+-Dependencies: JUnit (v5.8.1)
+
+# Sample output: WON
+```
+Welcome to Minesweeper!
+Enter the size of the grid (e.g. 4 for a 4x4 grid): 4
+Enter the number of mines to place on the grid (maximum is 35% of the total squares): 3
+Here is your mineField
+1 2 3 4
+A _ _ _ _
+B _ _ _ _
+C _ _ _ _
+D _ _ _ _
+Select a square to reveal (e.g. A1): A1
+Here is your mineField
+1 2 3 4
+A 0 _ _ _
+B _ _ _ _
+C _ _ _ _
+D _ _ _ _
+Select a square to reveal (e.g. A1): B1
+Here is your mineField
+1 2 3 4
+A 0 _ _ _
+B 1 _ _ _
+C _ _ _ _
+D _ _ _ _
+Select a square to reveal (e.g. A1): A2
+Here is your mineField
+1 2 3 4
+A 0 1 _ _
+B 1 _ _ _
+C _ _ _ _
+D _ _ _ _
+Select a square to reveal (e.g. A1): B2
+Here is your mineField
+1 2 3 4
+A 0 1 _ _
+B 1 2 _ _
+C _ _ _ _
+D _ _ _ _
+Select a square to reveal (e.g. A1): D1
+Here is your mineField
+1 2 3 4
+A 0 1 _ _
+B 1 2 _ _
+C _ _ _ _
+D 2 _ _ _
+Select a square to reveal (e.g. A1): D4
+Here is your mineField
+1 2 3 4
+A 0 1 _ _
+B 1 2 _ _
+C _ _ _ _
+D 2 _ _ 0
+Select a square to reveal (e.g. A1): C4
+Here is your mineField
+1 2 3 4
+A 0 1 _ _
+B 1 2 _ _
+C _ _ _ 0
+D 2 _ _ 0
+Select a square to reveal (e.g. A1): B4
+Here is your mineField
+1 2 3 4
+A 0 1 _ _
+B 1 2 _ 1
+C _ _ _ 0
+D 2 _ _ 0
+Select a square to reveal (e.g. A1): D3
+Here is your mineField
+1 2 3 4
+A 0 1 _ _
+B 1 2 _ 1
+C _ _ _ 0
+D 2 _ 2 0
+Select a square to reveal (e.g. A1): C3
+Here is your mineField
+1 2 3 4
+A 0 1 _ _
+B 1 2 _ 1
+C _ _ 2 0
+D 2 _ 2 0
+Select a square to reveal (e.g. A1): B3
+Here is your mineField
+1 2 3 4
+A 0 1 _ _
+B 1 2 2 1
+C _ _ 2 0
+D 2 _ 2 0
+Select a square to reveal (e.g. A1): A4
+Here is your mineField
+1 2 3 4
+A 0 1 _ 1
+B 1 2 2 1
+C _ _ 2 0
+D 2 _ 2 0
+Select a square to reveal (e.g. A1): C1
+Congratulations, you have won the game!
+The minefield was:
+1 2 3 4
+A 0 0 X 0
+B 0 0 0 0
+C 0 X 0 0
+D 0 X 0 0
+Press any key to continue or press X to exit:
+```
+
+# Sample output: LOST
+```
+Welcome to Minesweeper!
+Enter the size of the grid (e.g. 4 for a 4x4 grid): 4
+Enter the number of mines to place on the grid (maximum is 35% of the total squares): 3
+Here is your mineField
+  1 2 3 4 
+A _ _ _ _ 
+B _ _ _ _ 
+C _ _ _ _ 
+D _ _ _ _ 
+Select a square to reveal (e.g. A1): A1
+Here is your mineField
+  1 2 3 4 
+A 0 _ _ _ 
+B _ _ _ _ 
+C _ _ _ _ 
+D _ _ _ _ 
+Select a square to reveal (e.g. A1): A2
+Here is your mineField
+  1 2 3 4 
+A 0 1 _ _ 
+B _ _ _ _ 
+C _ _ _ _ 
+D _ _ _ _ 
+Select a square to reveal (e.g. A1): A3
+Oh no, you detonated a mine! Game over.
+The minefield was:
+  1 2 3 4 
+A 0 0 X X 
+B 0 0 0 0 
+C 0 0 0 0 
+D 0 X 0 0 
+Press any key to continue or press X to exit: 
+
 ```
